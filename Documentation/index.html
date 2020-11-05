@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Easy HRM - HUMAN RESPURCE MANAGEMENT ASP.NET CORE, EF CORE</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+    <div class="container">
+
+        <h3 class="center alt">&ldquo;Easy HRM - HUMAN RESPURCE MANAGEMENT ASP.NET CORE, EF CORE &rdquo; Documentation by &ldquo;kodauthor&rdquo; v1.0</h3>
+
+        <hr>
+
+        <h1 class="center">&ldquo;Easy HRM - HUMAN RESPURCE MANAGEMENT ASP.NET CORE, EF CORE&rdquo;</h1>
+
+        <div class="borderTop">
+            <div class="span-6 colborder info prepend-1">
+                <p class="prepend-top">
+                    <strong>
+                        Created: 20/01/2019<br>
+                        By: kodauthor<br>
+                        Email: <a href="mailto:kodauthor55@gmail.com">kodauthor55@gmail.com</a>
+                    </strong>
+                </p>
+            </div><!-- end div .span-6 -->
+
+            <div class="span-12 last">
+                <p class="prepend-top append-0">Thank you for purchasing my Item. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/Kodauthor">here</a>. Thanks so much!</p>
+            </div>
+        </div><!-- end div .borderTop -->
+
+        <hr>
+
+        <h2 id="toc" class="alt">Table of Contents</h2>
+        <ol class="alpha">
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#projectStructure">Project Structure</a></li>
+            <li><a href="#cssFiles">Change Database Connection</a></li>
+            <li><a href="#javascript">Run the application</a></li>
+             <li><a href="#HowTo">Video : How to setup</a></li>
+           
+
+         
+        </ol>
+
+        <hr>
+
+
+
+        <h3 id="requirements"><strong>A) Requirements </strong> - <a href="#toc">top</a></h3>
+        <p>if you want to run this web application in your machine, you must have these tools setup on your machine.</p>
+        <ol>
+            
+            <li>Visual Studio 2017 comes with .NET CORE 2.1 SDK</li>
+            <li>MS SQL Server or Local Server (which comes with Visual studio)</li>
+
+        </ol>
+        <hr>
+
+        <h3 id="projectStructure"><strong>B) Project Structure</strong> - <a href="#toc">top</a></h3>
+        <p>If you extract the Invoice.rar file, you will find a folder call "Project file" there, open the folder and you'll see a visual studio solution called "Invoice". Open that file in Visual Studio and it'll see like this below</p>
+
+        <img src="assets/images/onVs.jpg" style="height: 90%; width: 90%" alt="HTML Structure" />
+
+        <p>There are two class library and aspnet core mvc project in this solution </p>
+        <ol>
+            <li>EasyHRM.Core</li>
+            <li>EasyHRM.Data</li>
+            <li>EasyHRM.Web</li>
+
+        </ol>
+        <hr>
+        <h3 id="cssFiles"><strong>C) Change Database Connection</strong> - <a href="#toc">top</a></h3>
+        <p>In EasyHRM.Web, there is an appSettings.json, open that file. and find the 
+            "connectionStrings" section there, you'll see like below </p>
+
+        <pre>	
+"ConnectionStrings": {
+     "Default": "Server = .\\SQLexpress;Database= invoiceCoreDb;Integrated Security=True; "
+},
+</pre>
+
+        <p>just change the connection string as your SQL server instance name on Data Source, like below</p>
+        <pre>	
+  "Default": "Server = YOUR_SQL_SERVER_INSTANCE;Database= invoiceCoreDb;Integrated Security=True; "
+</pre>
+
+        <p></p>
+        <hr>
+
+        <h3 id="javascript"><strong>D) Migrate and Run the Application</strong> - <a href="#toc">top</a></h3>
+        <p>Go to tools > Nuget package manager > Select  'EasyHRM.Data' > package manager console then write Update-Database</p>
+        <p>Now, if your connection is okay, it'll generate the database e for you! Now you'll able to login as a admin </p>
+        <pre>
+            admin
+            username : admin@kodauthor.com 
+            password : 12345
+        </pre>
+
+        <p> Now you can use the system, by exploring all of the menu</p>
+        <hr>
+
+         <h3 id="HowTo"><strong>E) Video : How to setup</strong> - <a href="#toc">top</a></h3>
+         <iframe style="width: 960px; height: 720px" src="assets/HRMintsall.mp4"> </iframe> 
+        <hr>
+       
+
+        <p>Once again, thank you so much for purchasing this Item. As I said at the beginning, I'd be glad to help you if you have any questions relating to this Item. No guarantees, but I'll do my best to assist. If you have a more general question relating to the Items on codecanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+
+        <p class="append-bottom alt large"><strong>Kodauthor</strong></p>
+        <p><a href="#toc">Go To Table of Contents</a></p>
+
+        <hr class="space">
+    </div><!-- end div .container -->
+</body>
+</html>

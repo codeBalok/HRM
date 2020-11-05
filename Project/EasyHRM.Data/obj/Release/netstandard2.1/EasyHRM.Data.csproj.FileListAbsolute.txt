@@ -1,0 +1,12 @@
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\bin\Release\netstandard2.1\EasyHRM.Data.deps.json
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\bin\Release\netstandard2.1\EasyHRM.Data.dll
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\bin\Release\netstandard2.1\EasyHRM.Data.pdb
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\bin\Release\netstandard2.1\EasyHRM.Core.dll
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\bin\Release\netstandard2.1\EasyHRM.Core.pdb
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.csprojAssemblyReference.cache
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.AssemblyInfoInputs.cache
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.AssemblyInfo.cs
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.csproj.CoreCompileInputs.cache
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.csproj.CopyComplete
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.dll
+E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Release\netstandard2.1\EasyHRM.Data.pdb
