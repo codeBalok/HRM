@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {}
+    "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {}
   },
   "projects": {
-    "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
+    "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj",
+        "projectUniqueName": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj",
         "projectName": "EasyHRM.Core",
-        "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\obj\\",
+        "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj",
+        "packagesPath": "C:\\Users\\ansar\\.nuget\\packages\\",
+        "outputPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ansar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,17 +66,17 @@
         }
       }
     },
-    "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {
+    "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj",
+        "projectUniqueName": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj",
         "projectName": "EasyHRM.Data",
-        "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\obj\\",
+        "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj",
+        "packagesPath": "C:\\Users\\ansar\\.nuget\\packages\\",
+        "outputPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ansar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,8 +89,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
-                "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj"
+              "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
+                "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj"
               }
             }
           }

@@ -9164,19 +9164,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ansar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Web\\EasyHRM.Web.csproj",
+      "projectUniqueName": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Web\\EasyHRM.Web.csproj",
       "projectName": "EasyHRM.Web",
-      "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Web\\EasyHRM.Web.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Web\\obj\\",
+      "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Web\\EasyHRM.Web.csproj",
+      "packagesPath": "C:\\Users\\ansar\\.nuget\\packages\\",
+      "outputPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ansar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9189,11 +9189,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
-              "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj"
+            "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj": {
+              "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Core\\EasyHRM.Core.csproj"
             },
-            "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {
-              "projectPath": "E:\\workspace\\cloud\\easy-hrm\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj"
+            "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj": {
+              "projectPath": "D:\\Clients\\Abdul HRM\\HRM\\Project\\EasyHRM.Data\\EasyHRM.Data.csproj"
             }
           }
         }

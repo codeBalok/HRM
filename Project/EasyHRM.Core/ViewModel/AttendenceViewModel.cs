@@ -31,5 +31,7 @@ namespace EasyHRM.Core.ViewModel
         public string Name { get; set; }
         public string Status { get; set; }
         public string Remark { get; set; }
+        public string Mobile { get; set; }
+        public DateTime JoininDate { get; set; }
     }
 }

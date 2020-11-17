@@ -10,3 +10,15 @@ E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHR
 E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CopyComplete
 E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.dll
 E:\workspace\cloud\easy-hrm\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.pdb
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.Data.deps.json
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.Data.dll
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.Data.pdb
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.Core.dll
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.Core.pdb
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csprojAssemblyReference.cache
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.AssemblyInfoInputs.cache
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.AssemblyInfo.cs
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CoreCompileInputs.cache
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CopyComplete
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.dll
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.pdb

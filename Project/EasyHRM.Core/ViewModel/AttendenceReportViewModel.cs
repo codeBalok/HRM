@@ -37,7 +37,7 @@ namespace EasyHRM.Core.ViewModel
         }
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
-
+        
         public List<StatustViewModel> statustViewModel { get; set; }
     }
     public class StatustViewModel

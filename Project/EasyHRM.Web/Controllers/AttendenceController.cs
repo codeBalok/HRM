@@ -58,6 +58,7 @@ namespace EasyHRM.Web.Controllers
                 vm.AllCurrentMonthDate.Add(currentDate);
             }
 
+
             foreach (var item in employees)
             {
                 EmployeeStatustViewModel empStatusVm = new EmployeeStatustViewModel(days, model.Month);
@@ -75,14 +76,14 @@ namespace EasyHRM.Web.Controllers
 
                         var status = new StatustViewModel();
                         status.Date = attEmp.AttendenceDate;
-                        if (attEmp.Status == "Present")
+                        if (attEmp.Status == "P")
                         {
-                            status.Status = "Present";
+                            status.Status = "P";
                         }
 
-                        if (attEmp.Status == "Absense")
+                        if (attEmp.Status == "A")
                         {
-                            status.Status = "Absense";
+                            status.Status = "A";
                         }
                         empStatusVm.statustViewModel.Insert(statusR,status);
                     }
@@ -98,12 +99,24 @@ namespace EasyHRM.Web.Controllers
         public ActionResult TakeAttendence()
         {
             ViewBag.Depertments = departmentRepository.GetAllDepertmentForDropDown();
+            //Get last 7 days and last 3x months from current date
+            string[] last7Days = Enumerable.Range(1, 7).Select(i => DateTime.Now.AddDays(-i).ToString("dd/MM")).ToArray(); 
+            ViewBag.last7Days = last7Days;
+            string[] last3Months = Enumerable.Range(1, 3).Select(i => DateTime.Now.Date.AddMonths(-i).ToString("MMM")).ToArray(); 
+            ViewBag.last3Months = last3Months;
+            //ENd
             return View(new AttendenceViewModel());
         }
         [HttpPost]
         public ActionResult TakeAttendence(AttendenceViewModel model)
         {
             ViewBag.Depertments = departmentRepository.GetAllDepertmentForDropDown();
+            //Get last 7 days and last 3 months from current date
+            string[] last7Days = Enumerable.Range(1, 7).Select(i => DateTime.Now.AddDays(-i).ToString("dd/MM")).ToArray();
+            ViewBag.last7Days = last7Days;
+            string[] last3Months = Enumerable.Range(1, 3).Select(i => DateTime.Now.Date.AddMonths(-i).ToString("MMM")).ToArray();
+            ViewBag.last3Months = last3Months;
+            //ENd
             var attendences = attendenceRepository.All().Any(x => x.AttendenceDate == model.AttendenceDate);
             AttendenceViewModel vm = new AttendenceViewModel();
             vm.AttendenceDate = model.AttendenceDate;
@@ -124,7 +137,11 @@ namespace EasyHRM.Web.Controllers
             {
                 foreach (var item in employees)
                 {
-                    vm.AttendenceListViewModel.Add(new AttendenceListViewModel { EmployeeId = item.Id, Name = item.Name });
+                    vm.AttendenceListViewModel.Add(new AttendenceListViewModel { EmployeeId = item.Id,
+                        Name = item.Name,
+                        Mobile = item.Mobile,
+                        JoininDate = item.JoiningDate
+                    });
                 }
                 return View(vm);
             }

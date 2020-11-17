@@ -42,6 +42,10 @@
             background-color: #4CAF50;
             color: white;
         }
+    .btnEdit {
+        padding: 0 10px !important;
+        font-size: 13px;
+    }
 </style>
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
@@ -128,25 +132,29 @@
                         @foreach (var emp in Model.StatusViewModel)
                         {
 
-                            <tr>
-                                <td> @emp.EmployeeName </td>
-                                @foreach (var status in emp.statustViewModel)
-                                {
-                                    <td>
-                                        @if (status.Status == "Present")
-                                        {
-                                            <span  class="fa  fa-check"> </span>
+                    <tr>
+                        <td> @emp.EmployeeName </td>
+                        @foreach (var status in emp.statustViewModel)
+                        {
+                            <td>
+                                <select asp-for="@status.Status" class="form-control" id="status" style="padding:0" disabled>
+                                    <option value="@status.Status">@status.Status</option>
+                                </select>
+                                @*<select asp-for="@status.Status" id="editStatus" class="form-control" style="padding:0">
+                                    <option></option>
+                                    <option title="Absent">A</option>
+                                    <option title="Present">P</option>
+                                </select>*@
+                            </td>
+                         }
 
-                                        }
-                                        @if (status.Status == "Absense")
-                                        {
-
-                                            <span class="fa fa-times"></span>
-                                        }
-                                    </td>
-
-                                }
-                            </tr>
+                    <td style="text-align:center">
+                        @*<input class="btn btn-primary btnEdit" id="editBtn" type="submit" value="Edit" />*@
+                        <button class="btn btn-primary btnEdit" id="editBtn"  onclick="myEditFunction()">Edit</button>
+                        @*<input class="btn btn-primary btnEdit" id="saveBtn" type="submit" value="Save" />*@
+                        <button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction()">Save</button>
+                    </td>
+                    </tr>
                         }
                     </table>
                 </div>
@@ -154,4 +162,46 @@
         }
     </div>
 </div>
+<script>
+    var edit = document.getElementById("saveBtn");
+    var save = document.getElementById("editBtn");
+    edit.style.display = "none";
+    save.style.display = "block";
+    function myEditFunction() {
+        if (edit.style.display === "none") {
+            edit.style.display = "block";
+            save.style.display = "none";
+        } else {
+            edit.style.display = "none";
+            save.style.display = "block";
+        }
+    }
+    function mySaveFunction() {
+        if (edit.style.display === "none") {
+            edit.style.display = "block";
+            save.style.display = "none";
+        } else {
+            edit.style.display = "none";
+            save.style.display = "block";
+        }
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#saveBtn").hide();
+        $("#editStatus").hide();
+        $("#editBtn").click(function () {
+            $(this).hide();
+            $("#status").hide();
+            $("#saveBtn").show();
+            $("#editStatus").show();
+        });
+        $("#saveBtn").click(function () {
+            $(this).hide();
+            $("#editStatus").hide();
+            $("#editBtn").show();
+            $("#status").show();
+        });
+    });
+</script>
 
