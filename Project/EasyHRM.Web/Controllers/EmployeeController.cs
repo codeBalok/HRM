@@ -19,7 +19,7 @@ using Rotativa.AspNetCore;
 
 namespace EasyHRM.Web.Controllers
 {
-    [Authorize(Roles = "User")]
+    //[Authorize(Roles = "User")]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeDashboard dashboardRepository;

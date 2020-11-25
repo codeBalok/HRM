@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EasyHRM.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class CompanyController : Controller
     {
         private readonly ICompanyRepository companyRepository;

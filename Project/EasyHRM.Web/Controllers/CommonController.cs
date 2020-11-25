@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EasyHRM.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class CommonController : Controller
     {
         private readonly IDepartmentRepository departmentRepository;

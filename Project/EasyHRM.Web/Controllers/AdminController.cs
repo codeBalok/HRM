@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EasyHRM.Web.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         private readonly IHolidayRepository holidayRepository;

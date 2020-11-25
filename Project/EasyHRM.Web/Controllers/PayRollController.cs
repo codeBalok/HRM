@@ -15,7 +15,7 @@ using Rotativa.AspNetCore;
 
 namespace EasyHRM.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class PayRollController : Controller
     {
         private readonly IAllowanceTypeRepository allowanceTypeRepository;

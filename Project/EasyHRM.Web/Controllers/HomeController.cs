@@ -59,13 +59,15 @@ namespace EasyHRM.Web.Controllers
         }
        
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
+        [Route("Home/Login")]
         public ActionResult Login(LoginViewModel model)
         {
             bool isUservalid = false;
+            //var user = userRepository.All()
+            //    .SingleOrDefault(x=>x.UserId == model.UserId);
 
-            var user = userRepository.All()
-                .SingleOrDefault(x=>x.Email == model.Email && x.Password == model.Password);
+            var user = model.UserId;
 
             if (user != null)
             {
@@ -73,31 +75,23 @@ namespace EasyHRM.Web.Controllers
             }
 
 
-            if (ModelState.IsValid && isUservalid)
+            if (isUservalid)
             {
                 var claims = new List<Claim>();
+                claims.Add(new Claim(ClaimTypes.Name, user));
 
-                claims.Add(new Claim(ClaimTypes.Name, user.Email));
-
-                string[] roles = user.Role.Split(",");
-
-                foreach (string role in roles)
-                {
-                    claims.Add(new Claim(ClaimTypes.Role, role));
-                }
-
-                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults. AuthenticationScheme);
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
 
                 var props = new AuthenticationProperties();
-                //props.IsPersistent = model.RememberMe;
 
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                     principal, props).Wait();
-                if (user.Role == "Admin")
-                    return RedirectToAction("Index", "admin");
-                if (user.Role == "User")
-                    return RedirectToAction("Index", "Employee");
+                //var url = "http://localhost:50451/Admin/Index";
+                if (user != null)
+                    return Json(new { newUrl = Url.Action("Index", "Admin") });
+                //if (user.Role == "User")
+                //    return RedirectToAction("Index", "Employee");
             }
             else
             {
@@ -106,6 +100,54 @@ namespace EasyHRM.Web.Controllers
 
             return View();
         }
+
+        //public ActionResult Login(LoginViewModel model)
+        //{
+        //    bool isUservalid = false;
+
+        //    var user = userRepository.All()
+        //        .SingleOrDefault(x=>x.Email == model.Email && x.Password == model.Password);
+
+        //    if (user != null)
+        //    {
+        //        isUservalid = true;
+        //    }
+
+
+        //    if (ModelState.IsValid && isUservalid)
+        //    {
+        //        var claims = new List<Claim>();
+
+        //        claims.Add(new Claim(ClaimTypes.Name, user.Email));
+
+        //        string[] roles = user.Role.Split(",");
+
+        //        foreach (string role in roles)
+        //        {
+        //            claims.Add(new Claim(ClaimTypes.Role, role));
+        //        }
+
+        //        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults. AuthenticationScheme);
+        //        var principal = new ClaimsPrincipal(identity);
+
+        //        var props = new AuthenticationProperties();
+        //        //props.IsPersistent = model.RememberMe;
+
+        //        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+        //            principal, props).Wait();
+        //        if (user.Role == "Admin")
+        //            return RedirectToAction("Index", "admin");
+        //        if (user.Role == "User")
+        //            return RedirectToAction("Index", "Employee");
+        //    }
+        //    else
+        //    {
+        //        TempData["FFMsg"] = "Invalid Email or Password!";
+        //    }
+
+        //    return View();
+        //}
+
         [HttpGet]
         public IActionResult Logout()
         {

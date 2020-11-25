@@ -150,9 +150,9 @@
 
                     <td style="text-align:center">
                         @*<input class="btn btn-primary btnEdit" id="editBtn" type="submit" value="Edit" />*@
-                        <button class="btn btn-primary btnEdit" id="editBtn"  onclick="myEditFunction()">Edit</button>
+                        <button class="btn btn-primary btnEdit" id="editBtn+@emp.EmployeeId" value="Edit" onclick="myEditFunction()">Edit</button>
                         @*<input class="btn btn-primary btnEdit" id="saveBtn" type="submit" value="Save" />*@
-                        <button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction()">Save</button>
+                        @*<button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction(@emp.EmployeeId)">Save</button>*@
                     </td>
                     </tr>
                         }
@@ -162,46 +162,38 @@
         }
     </div>
 </div>
-<script>
-    var edit = document.getElementById("saveBtn");
-    var save = document.getElementById("editBtn");
-    edit.style.display = "none";
-    save.style.display = "block";
+@*<script>
+    var save = document.getElementById("saveBtn");
+    var edit = document.getElementById("editBtn");
+    edit.style.display = "block";
+    save.style.display = "none";
     function myEditFunction() {
-        if (edit.style.display === "none") {
-            edit.style.display = "block";
-            save.style.display = "none";
-        } else {
+        if (edit.style.display === "block") {
             edit.style.display = "none";
             save.style.display = "block";
         }
     }
     function mySaveFunction() {
-        if (edit.style.display === "none") {
+        if (save.style.display === "block") {
             edit.style.display = "block";
             save.style.display = "none";
-        } else {
-            edit.style.display = "none";
-            save.style.display = "block";
         }
     }
-</script>
+</script>*@
 <script>
-    $(document).ready(function () {
-        $("#saveBtn").hide();
-        $("#editStatus").hide();
-        $("#editBtn").click(function () {
-            $(this).hide();
-            $("#status").hide();
-            $("#saveBtn").show();
-            $("#editStatus").show();
-        });
-        $("#saveBtn").click(function () {
-            $(this).hide();
-            $("#editStatus").hide();
-            $("#editBtn").show();
-            $("#status").show();
-        });
-    });
+    function myEditFunction() {
+
+        var btn = document.getElementById("editBtn+1");
+
+        if (btn.value == "Edit") {
+            btn.value = "Save";
+            btn.innerHTML = "Save";
+        }
+        else {
+            btn.value = "Edit";
+            btn.innerHTML = "Edit";
+        }
+
+    }
 </script>
 

@@ -113,8 +113,8 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
 
-                        @if (User.IsInRole("Admin"))
-                        {
+                        @*@if (User.IsInRole("Admin"))
+                        {*@
                             <li>
                                 <a href="~/Admin/index" class="waves-effect waves-dark" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
@@ -163,7 +163,7 @@
                             <li>
                                 <a href="/Company/index" class="waves-effect waves-dark" aria-expanded="false"><i class="fa fa-cog"></i><span class="hide-menu">Company Setting</span></a>
                             </li>
-                        }
+                        @* } *@
                         @if (User.IsInRole("User"))
                         {
                             <li>
