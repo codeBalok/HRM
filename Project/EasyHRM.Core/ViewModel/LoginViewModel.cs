@@ -7,10 +7,12 @@ namespace EasyHRM.Core.ViewModel
 {
     public class LoginViewModel
     {
-        [Required]
+        //[Required]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
+        //[Required]
         public string Password { get; set; }
+        [Required]
+        public string UserId { get; set; }
     }
 }
