@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EasyHRM.Web.Controllers
 {
+    //[Route("api/[controller]/{UserId}")]
     //[Authorize(Roles = "Admin")]
     public class AttendenceController : Controller
     {

@@ -10,5 +10,6 @@ namespace EasyHRM.Core.Interfaces
     public interface IUserRepository : IBaseRepository<UserModel>
     {
         //bool ValidateUser(LoginViewModel user);
+        //IEnumerable<DesignationModel> GetUserByUserId(string UserId);
     }
 }

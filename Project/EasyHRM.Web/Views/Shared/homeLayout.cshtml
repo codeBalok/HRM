@@ -65,7 +65,7 @@
                 type: 'POST',
                 dataType: 'json',
                 url: '/Home/Login',
-                data: { UserId: agentId }
+                data: { UserIdDetail: agentId }
             }).done(function (res) {
                 console.log("Url", res)
                 window.location.href = res.newUrl;

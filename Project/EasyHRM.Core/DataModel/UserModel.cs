@@ -9,12 +9,15 @@ namespace EasyHRM.Core.DataModel
     public class UserModel : BaseModel 
     {
         [EmailAddress]
-        [Required]
+        //[Required]
         public string Email { get; set; }
-        [Required]
+        //[Required]
         public string Password { get; set; }
-        [Required]
+        //[Required]
         public string Role { get; set; }
-        public int? UserId { get; set; }
+        [Required]
+        public string UserIdDetail { get; set; }
+        [Required]
+        public int UserId { get; set; }
     }
 }

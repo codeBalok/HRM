@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using EasyHRM.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using EasyHRM.Core.DataModel;
 
 namespace EasyHRM.Web.Controllers
 {
@@ -64,11 +65,24 @@ namespace EasyHRM.Web.Controllers
         public ActionResult Login(LoginViewModel model)
         {
             bool isUservalid = false;
-            //var user = userRepository.All()
-            //    .SingleOrDefault(x=>x.UserId == model.UserId);
-
-            var user = model.UserId;
-
+            
+            var user = userRepository.All()
+                .SingleOrDefault(x => x.UserIdDetail == model.UserIdDetail);
+            //var users = userRepository.GetUserByUserId(model.UserId);
+            //var user = model.UserIdDetail;
+            if (user == null)
+            {
+                Random r = new Random();
+                int genRand = r.Next(10, 50);
+                UserModel userModel = new UserModel
+                {
+                    UserId = genRand,
+                    UserIdDetail = model.UserIdDetail
+                };
+                isUservalid = true;
+                userRepository.Insert(userModel);
+                //return Ok(new { success = "Profile updated successfully." });
+            }
             if (user != null)
             {
                 isUservalid = true;
@@ -78,7 +92,7 @@ namespace EasyHRM.Web.Controllers
             if (isUservalid)
             {
                 var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.Name, user));
+                claims.Add(new Claim(ClaimTypes.Name, user.UserIdDetail));
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
@@ -87,7 +101,6 @@ namespace EasyHRM.Web.Controllers
 
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                     principal, props).Wait();
-                //var url = "http://localhost:50451/Admin/Index";
                 if (user != null)
                     return Json(new { newUrl = Url.Action("Index", "Admin") });
                 //if (user.Role == "User")
