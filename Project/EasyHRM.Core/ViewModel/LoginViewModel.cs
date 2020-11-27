@@ -15,6 +15,6 @@ namespace EasyHRM.Core.ViewModel
         [Required]
         public int UserId { get; set; }
         [Required]
-        public string UserIdDetail { get; set; }
+        public string EduDashManagerID { get; set; }
     }
 }

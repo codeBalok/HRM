@@ -18,7 +18,7 @@ D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\bin\Debug\netstandard2.1\EasyHRM.C
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csprojAssemblyReference.cache
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.AssemblyInfoInputs.cache
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.AssemblyInfo.cs
-D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CoreCompileInputs.cache
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CopyComplete
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.dll
 D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.pdb
+D:\Clients\Abdul HRM\HRM\Project\EasyHRM.Data\obj\Debug\netstandard2.1\EasyHRM.Data.csproj.CoreCompileInputs.cache

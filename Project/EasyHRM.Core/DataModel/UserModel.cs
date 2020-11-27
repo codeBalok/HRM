@@ -16,7 +16,7 @@ namespace EasyHRM.Core.DataModel
         //[Required]
         public string Role { get; set; }
         [Required]
-        public string UserIdDetail { get; set; }
+        public string EduDashManagerID { get; set; }
         [Required]
         public int UserId { get; set; }
     }

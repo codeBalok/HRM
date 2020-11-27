@@ -239,7 +239,7 @@ namespace EasyHRM.Web.Controllers
                 model.ImagePath = $"/Images/{logoPostedFileBase.FileName}";
             }
             employeeRepository.Insert(model);
-            userRepository.Insert(new UserModel { Email = model.Email, Password = "12345", Role = "User", UserId=model.Id });
+            //userRepository.Insert(new UserModel { Email = model.Email, Password = "12345", Role = "User", UserId=model.Id });
             ViewBag.Msg = "Employee & User created successfully, Please change the default password after first login!";
             return RedirectToAction("EmployeeList");
         }

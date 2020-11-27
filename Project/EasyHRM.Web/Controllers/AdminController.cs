@@ -45,6 +45,8 @@ namespace EasyHRM.Web.Controllers
         }
 
         // admin dashboard
+
+        //[Route("Admin/Index={EduDashManagerID}")]
         public IActionResult Index()
         {
             DashboardViewModel vm = new DashboardViewModel();

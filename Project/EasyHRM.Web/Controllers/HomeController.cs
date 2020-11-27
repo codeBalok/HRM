@@ -67,7 +67,7 @@ namespace EasyHRM.Web.Controllers
             bool isUservalid = false;
             
             var user = userRepository.All()
-                .SingleOrDefault(x => x.UserIdDetail == model.UserIdDetail);
+                .SingleOrDefault(x => x.EduDashManagerID == model.EduDashManagerID);
             //var users = userRepository.GetUserByUserId(model.UserId);
             //var user = model.UserIdDetail;
             if (user == null)
@@ -76,8 +76,9 @@ namespace EasyHRM.Web.Controllers
                 int genRand = r.Next(10, 50);
                 UserModel userModel = new UserModel
                 {
+                    Role = "Admin",
                     UserId = genRand,
-                    UserIdDetail = model.UserIdDetail
+                    EduDashManagerID = model.EduDashManagerID
                 };
                 isUservalid = true;
                 userRepository.Insert(userModel);
@@ -92,7 +93,7 @@ namespace EasyHRM.Web.Controllers
             if (isUservalid)
             {
                 var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.Name, user.UserIdDetail));
+                claims.Add(new Claim(ClaimTypes.Name, user.EduDashManagerID));
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);

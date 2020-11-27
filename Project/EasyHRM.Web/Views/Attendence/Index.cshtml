@@ -46,6 +46,8 @@
         padding: 0 10px !important;
         font-size: 13px;
     }
+    .hide{display:none !important}
+    .show {display: block !important}
 </style>
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
@@ -132,29 +134,50 @@
                         @foreach (var emp in Model.StatusViewModel)
                         {
 
-                    <tr>
-                        <td> @emp.EmployeeName </td>
-                        @foreach (var status in emp.statustViewModel)
-                        {
-                            <td>
-                                <select asp-for="@status.Status" class="form-control" id="status" style="padding:0" disabled>
-                                    <option value="@status.Status">@status.Status</option>
-                                </select>
-                                @*<select asp-for="@status.Status" id="editStatus" class="form-control" style="padding:0">
-                                    <option></option>
-                                    <option title="Absent">A</option>
-                                    <option title="Present">P</option>
-                                </select>*@
-                            </td>
-                         }
+                            <tr>
+                                <td> @emp.EmployeeName </td>
+                                @foreach (var status in emp.statustViewModel)
+                                {
+                                    <td>
+                                        <select asp-for="@status.Status" class="form-control" id="status" style="padding:0" disabled>
+                                            <option value="@status.Status">@status.Status</option>
+                                        </select>
+                                        <select asp-for="@status.Status" id="editStatus" class="form-control hide" style="padding:0">
+                                            <option></option>
+                                            <option title="Absent">A</option>
+                                            <option title="Present">P</option>
+                                        </select>
+                                    </td>
+                                }
 
-                    <td style="text-align:center">
-                        @*<input class="btn btn-primary btnEdit" id="editBtn" type="submit" value="Edit" />*@
-                        <button class="btn btn-primary btnEdit" id="editBtn+@emp.EmployeeId" value="Edit" onclick="myEditFunction()">Edit</button>
-                        @*<input class="btn btn-primary btnEdit" id="saveBtn" type="submit" value="Save" />*@
-                        @*<button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction(@emp.EmployeeId)">Save</button>*@
-                    </td>
-                    </tr>
+                                <td style="text-align:center">
+                                    @*<input class="btn btn-primary btnEdit" id="editBtn" type="submit" value="Edit" />*@
+                                    <button class="btn btn-primary btnEdit" id="edit_@emp.EmployeeId" value="Edit" onclick="myEditFunction_@emp.EmployeeId ()">Edit</button>
+                                    @*<input class="btn btn-primary btnEdit" id="saveBtn" type="submit" value="Save" />*@
+                                    @*<button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction(@emp.EmployeeId)">Save</button>*@
+                                </td>
+                            </tr>
+                            <script>
+                                function myEditFunction_@emp.EmployeeId () {
+                                    var save = document.getElementById("status");
+                                    var edit = document.getElementById("editStatus");
+                                    var btn = document.getElementById(edit_@emp.EmployeeId);
+
+                                    if (btn.value == "Edit") {
+                                        btn.value = "Save";
+                                        btn.innerHTML = "Save";
+                                        edit.removeClass('hide');
+                                        save.addClass('hide');
+                                    }
+                                    else {
+                                        btn.value = "Edit";
+                                        btn.innerHTML = "Edit";
+                                        edit.addClass('hide');
+                                        save.removeClass('hide');
+                                    }
+
+                                }
+                            </script>
                         }
                     </table>
                 </div>
@@ -162,38 +185,4 @@
         }
     </div>
 </div>
-@*<script>
-    var save = document.getElementById("saveBtn");
-    var edit = document.getElementById("editBtn");
-    edit.style.display = "block";
-    save.style.display = "none";
-    function myEditFunction() {
-        if (edit.style.display === "block") {
-            edit.style.display = "none";
-            save.style.display = "block";
-        }
-    }
-    function mySaveFunction() {
-        if (save.style.display === "block") {
-            edit.style.display = "block";
-            save.style.display = "none";
-        }
-    }
-</script>*@
-<script>
-    function myEditFunction() {
-
-        var btn = document.getElementById("editBtn+1");
-
-        if (btn.value == "Edit") {
-            btn.value = "Save";
-            btn.innerHTML = "Save";
-        }
-        else {
-            btn.value = "Edit";
-            btn.innerHTML = "Edit";
-        }
-
-    }
-</script>
 

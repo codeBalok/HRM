@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -22,5 +23,10 @@ namespace EasyHRM.Core.DataModel
         public string Description { get; set; }
 
         public ICollection<DesignationModel> Designations { get; set; }
+
+        //[ForeignKey("UserModel")]
+        //[DisplayName("UserId")]
+        //public int UserId { get; set; }
+        //public UserModel UserModel { get; set; }
     }
 }
