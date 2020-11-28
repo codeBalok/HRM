@@ -102,9 +102,9 @@ namespace EasyHRM.Web.Controllers
             ViewBag.Depertments = departmentRepository.GetAllDepertmentForDropDown();
             //Get last 7 days and last 3x months from current date
             string[] last7Days = Enumerable.Range(1, 7).Select(i => DateTime.Now.AddDays(-i).ToString("dd/MM")).ToArray(); 
-            ViewBag.last7Days = last7Days;
+            ViewBag.last7Days = last7Days.Reverse();
             string[] last3Months = Enumerable.Range(1, 3).Select(i => DateTime.Now.Date.AddMonths(-i).ToString("MMM")).ToArray(); 
-            ViewBag.last3Months = last3Months;
+            ViewBag.last3Months = last3Months.Reverse();
             //ENd
             return View(new AttendenceViewModel());
         }
@@ -150,6 +150,7 @@ namespace EasyHRM.Web.Controllers
         }
 
         [HttpPost]
+        [Route("Attendence/SaveAttendence")]
         public IActionResult SaveAttendence(AttendenceViewModel model)
         {
             if (model.AttendenceListViewModel.Count() > 0){

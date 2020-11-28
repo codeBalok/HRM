@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Take Attendence";
-
+    int i = 0;
 }
 
 <style>
@@ -139,41 +139,56 @@
                                 @foreach (var status in emp.statustViewModel)
                                 {
                                     <td>
-                                        <select asp-for="@status.Status" class="form-control" id="status" style="padding:0" disabled>
-                                            <option value="@status.Status">@status.Status</option>
+                                        <select asp-for="@status.Status" class="form-control status_@emp.EmployeeId" name="AttendenceListViewModel[@i].Status" style="padding:0" disabled>
+                                            @if (status.Status == "P")
+                                            {
+                                                <option value="@status.Status">@status.Status</option>
+                                            }
+                                            @if (status.Status == "")
+                                            {
+                                                <option></option>
+                                                <option title="Absent" value="A">A</option>
+                                                <option title="Present" value="P">P</option>
+                                            }
                                         </select>
-                                        <select asp-for="@status.Status" id="editStatus" class="form-control hide" style="padding:0">
+                                        @*<select asp-for="@status.Status" id="editStatus" class="form-control hide" style="padding:0">
                                             <option></option>
                                             <option title="Absent">A</option>
                                             <option title="Present">P</option>
-                                        </select>
+                                        </select>*@
                                     </td>
                                 }
 
                                 <td style="text-align:center">
-                                    @*<input class="btn btn-primary btnEdit" id="editBtn" type="submit" value="Edit" />*@
                                     <button class="btn btn-primary btnEdit" id="edit_@emp.EmployeeId" value="Edit" onclick="myEditFunction_@emp.EmployeeId ()">Edit</button>
-                                    @*<input class="btn btn-primary btnEdit" id="saveBtn" type="submit" value="Save" />*@
-                                    @*<button class="btn btn-primary btnEdit" id="saveBtn" onclick="mySaveFunction(@emp.EmployeeId)">Save</button>*@
                                 </td>
                             </tr>
                             <script>
                                 function myEditFunction_@emp.EmployeeId () {
-                                    var save = document.getElementById("status");
-                                    var edit = document.getElementById("editStatus");
-                                    var btn = document.getElementById(edit_@emp.EmployeeId);
+                                    var save = document.getElementById("status_@emp.EmployeeId");
+                                    var btn = document.getElementById("edit_@emp.EmployeeId");
 
                                     if (btn.value == "Edit") {
                                         btn.value = "Save";
                                         btn.innerHTML = "Save";
-                                        edit.removeClass('hide');
-                                        save.addClass('hide');
+                                        $(".status_@emp.EmployeeId").prop("disabled", false);
                                     }
                                     else {
                                         btn.value = "Edit";
                                         btn.innerHTML = "Edit";
-                                        edit.addClass('hide');
-                                        save.removeClass('hide');
+                                        debugger
+                                        $(".status_@emp.EmployeeId").prop("disabled", true);
+                                        $.ajax({
+                                            type: 'POST',
+                                            dataType: 'json',
+                                            url: '/Attendence/SaveAttendence',
+                                            data: { Status: status.Status }
+                                        }).done(function (res) {
+                                            console.log("Data", res)
+                                            alert(res)
+                                        }).fail(function (xhr, a, error) {
+                                            console.log(error);
+                                        });
                                     }
 
                                 }
